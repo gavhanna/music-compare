@@ -22,7 +22,7 @@ services:
       WORDPRESS_DB_NAME: refrain_db
       WORDPRESS_TABLE_PREFIX: rf_
       WORDPRESS_DB_PASSWORD: Yn@&N2ByjKY+St_#
-      SECRET_KEY: p*T8fsLYu5wH$Dks973Fx^qF$5#Rn$r=
+      SECRET_KEY: ifohwhefkSDIFlDLSfjlsdkfjlsESfjefij
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
