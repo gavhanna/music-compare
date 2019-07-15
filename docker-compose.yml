@@ -1,0 +1,41 @@
+version: '3'
+services:
+
+  database:
+    image: mysql:5.7
+    volumes:
+      - dbdata:/var/lib/mysql-refrain
+    environment:
+      MYSQL_ROOT_PASSWORD: Yn@&N2ByjKY+St_#
+    ports:
+      - '3306:3306'
+
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8080:80"
+    links:
+      - database:mysql
+    environment:
+      WORDPRESS_DB_NAME: refrain_db
+      WORDPRESS_TABLE_PREFIX: rf_
+      WORDPRESS_DB_PASSWORD: Yn@&N2ByjKY+St_#
+      SECRET_KEY: p*T8fsLYu5wH$Dks973Fx^qF$5#Rn$r=
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - "8181:80"
+    links:
+        - "database:db"
+volumes:
+  dbdata:
+
+
+
+
+
+
+
